@@ -1,0 +1,50 @@
+nav {
+  background-color: #333333;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.nav-logo {
+  width: 90px;
+}
+
+.nav-logo img {
+  width: 90px;
+  position: absolute;
+  top: 5px;
+}
+
+.nav-menu {}
+
+.box-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-item:not(:nth-child(1)) {
+  margin-left: 1rem;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.menu-item {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.btn-agendar {
+  background-color: #c09457;
+  color: #fff;
+  text-decoration: none;
+  padding: .7rem 1.5rem;
+  text-transform: uppercase;
+  border-radius: 2rem;
+}
