@@ -12,6 +12,11 @@ h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
 }
 
+h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
 p, a {
   font-family: 'Quattrocento', serif;
 }
@@ -22,54 +27,45 @@ p, a {
 }
 
 
-/* ABOUT */
-.about {
-  padding: 3rem 0;
-}
+/* schedule */
+.schedule {
+  background-image: url('../images/barbearia.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-.about-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.about-contact {
+  color: #fff;
   text-align: center;
 }
 
-.about-contact h3 {
-  writing-mode:tb-rl;
-  transform: rotate(180deg);
-  white-space:nowrap;
+.schedule-overlay {
+  background-color: rgba(0,0,0, 0.4);
+  padding: 4rem 0;
 }
 
-.about-text {
-  padding: 0 2.5rem;
-  max-width: 700px;
-}
-
-.about-text h2 {
-  text-align: center;
-  font-size: 3rem;
-}
-
-.about-text p {
-  margin-top: 1rem;
-}
-
-.about-text img {
+.calendar-table {
   width: 100%;
-  margin-top: 2rem;
+  border-collapse: collapse;
+  overflow:hidden;
+  -webkit-border-radius: .7rem;
+     -moz-border-radius: .7rem;
+          border-radius: .7rem;
+  margin: 1.5rem 0;
 }
 
-
-.about-image {
-  width: 0px;
+.calendar-table th, .calendar-table td {
+  padding: .9rem 0;
 }
 
-.about-image img {
-  width: 350px;
-  position: relative;
-  right: 50px;
-  top: auto;
+.calendar-table th {
+  background: #999;
 }
+
+.calendar-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.calendar-table tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.6);
+}
+
