@@ -1,0 +1,40 @@
+.schedule {
+  background-image: url('../images/barbearia.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: #fff;
+  text-align: center;
+}
+
+.schedule-overlay {
+  background-color: rgba(0,0,0, 0.3);
+  padding: 4rem 0;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow:hidden;
+  -webkit-border-radius: .7rem;
+     -moz-border-radius: .7rem;
+          border-radius: .7rem;
+  margin: 1.5rem 0;
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 1rem 0;
+}
+
+.calendar-table th {
+  background: #999;
+}
+
+.calendar-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.calendar-table tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.6);
+}

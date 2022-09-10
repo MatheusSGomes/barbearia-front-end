@@ -1,0 +1,30 @@
+.footer {
+  padding: 2rem 0;
+  background-color: #333333;
+  color: #919191;
+}
+
+.footer > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {}
+
+.footer-copy {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer-copy a {
+  color: #919191;
+}
+
+.footer-copy a:hover {
+  color: #717171;
+}
+
+.footer-social-media a {
+  text-decoration: none;
+}
