@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
 }
@@ -19,13 +23,53 @@ p, a {
 
 
 /* ABOUT */
-.about-container {
-  display: flex;
+.about {
+  padding: 3rem 0;
 }
 
-.about img {
-  width: 350px;
+.about-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  /* position: relative; */
-  /* top: 0px; */
+.about-contact {
+  text-align: center;
+}
+
+.about-contact h3 {
+  writing-mode:tb-rl;
+  transform: rotate(180deg);
+  white-space:nowrap;
+}
+
+.about-text {
+  padding: 0 2.5rem;
+  max-width: 700px;
+}
+
+.about-text h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.about-text p {
+  margin-top: 1rem;
+}
+
+.about-text img {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+
+.about-image {
+  width: 0px;
+}
+
+.about-image img {
+  width: 350px;
+  position: relative;
+  right: 50px;
+  top: auto;
 }
