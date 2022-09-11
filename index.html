@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
-  <nav>
+  <nav class="navbar">
     <div class="container">
       <div class="navigation">
         <div class="nav-logo">
@@ -31,35 +31,33 @@
         <div class="nav-menu">
           <ul class="box-menu">
             <li class="menu-item">
-              <a href="#">Home</a>
+              <a href="#home">Home</a>
             </li>
             <li class="menu-item">
-              <a href="#">Sobre</a>
+              <a href="#about">Sobre</a>
             </li>
             <li class="menu-item">
-              <a href="#">Serviços</a>
+              <a href="#services">Serviços</a>
             </li>
             <li class="menu-item">
-              <a href="#">Galeria</a>
-            </li>
-            <li class="menu-item">
-              <a href="#">Agendar</a>
+              <a href="#gallery">Galeria</a>
             </li>
           </ul>
         </div>
         <div class="btn-box">
-          <a class="btn-agendar" href="#">Agendar</a>
+          <a class="btn" href="#schedule">Agendar</a>
         </div>
       </div>
     </div>
   </nav>
+
   <section class="hero">
     <h1 class="hero-title">Beard Club</h1>
     <p class="hero-since">Desde 1967</p>
     <p class="hero-sloga">"Descubra a sua melhor versão"</p>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="about-container">
         <div class="about-contact">
@@ -78,28 +76,47 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <div class="container">
       <h2>Serviços</h2>
+
+      <ul>
+        <li>Barba</li>
+        <li>Corte de Cabelo</li>
+        <li>Sobrancelha</li>
+        <li>Hidratação</li>
+      </ul>
     </div>
   </section>
 
-  <section class="galeria">
+  <section class="gallery" id="gallery">
     <div class="container">
       <h2>Galeria</h2>
+
+      <div class="gallery-container">
+        <div class="gallery-img">
+          <img src="./assets/images/beard-1.jpg" alt="Barba 1 Galeria">
+        </div>
+        <div class="gallery-img">
+          <img src="./assets/images/beard-2.jpg" alt="Barba 2 Galeria">
+        </div>
+        <div class="gallery-img">
+          <img src="./assets/images/beard-3.jpg" alt="Barba 3 Galeria">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="schedule">
+  <section class="schedule" id="schedule">
     <div class="schedule-overlay">
       <div class="container">
         <h2>Agendar horário</h2>
-        <p>Escolha os horários abaixo</p>
+        <p>Escolha o horário abaixo</p>
 
         <table class="calendar-table">
           <thead>
             <tr>
-              <th>---</th>
+              <th>HORÁRIOS</th>
               <th>SEG</th>
               <th>TER</th>
               <th>QUA</th>
@@ -199,7 +216,10 @@
           </tbody>
         </table>
 
-        <i>*Fechado aos domingos</i>
+        <div class="btn-box-schedule">
+          <a class="btn" href="#">Confirmar</a>
+          <i>*Fechado aos domingos</i>
+        </div>
       </div>
     </div>
   </section>

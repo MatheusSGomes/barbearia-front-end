@@ -39,12 +39,3 @@ nav {
   color: #fff;
   text-transform: uppercase;
 }
-
-.btn-agendar {
-  background-color: #c09457;
-  color: #fff;
-  text-decoration: none;
-  padding: .7rem 1.5rem;
-  text-transform: uppercase;
-  border-radius: 2rem;
-}
