@@ -1,0 +1,30 @@
+.services {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.service-title {
+  margin-bottom: 1rem;
+}
+
+.services-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-box img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.services-box:hover {
+  opacity: .5;
+  transition: .2s ease-in-out;
+}
