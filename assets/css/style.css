@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #A6916A;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -31,7 +35,7 @@ p, a {
 }
 
 .btn {
-  background-color: #c09457;
+  background-color: var(--primary-color);
   color: #fff;
   text-decoration: none;
   padding: .7rem 1.5rem;

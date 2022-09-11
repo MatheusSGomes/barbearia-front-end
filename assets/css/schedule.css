@@ -28,8 +28,8 @@
 }
 
 .calendar-table th {
-  background: #999;
-  color: #000;
+  background: var(--primary-color);
+  color: #fff;
 }
 
 .calendar-table tr:nth-child(even) {
@@ -41,6 +41,6 @@
 }
 
 .btn-box-schedule {
-  margin: 1rem 0 2rem 0;
+  margin: 2rem 0 3rem 0;
   text-align: left;
 }
