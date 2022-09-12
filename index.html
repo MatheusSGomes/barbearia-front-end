@@ -16,12 +16,12 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
   <link rel="stylesheet" href="assets/css/hero.css">
-
   <link rel="stylesheet" href="assets/css/about.css">
   <link rel="stylesheet" href="assets/css/services.css">
   <link rel="stylesheet" href="assets/css/gallery.css">
   <link rel="stylesheet" href="assets/css/schedule.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/pop-up.css">
 </head>
 <body>
   <nav class="navbar">
@@ -244,7 +244,49 @@
         </div>
       </div>
     </div>
+
   </section>
+
+  <div class="popup">
+    <div class="popup-box">
+      <img class="icon-close" src="./assets/icons/close.svg" width="20px" />
+
+      <form action="">
+        <label for="name">Nome: </label>
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+
+        <label for="name">Email: </label>
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+
+        <label for="name">Whatsapp: </label>
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+
+        <div class="popup-services">
+          <div class="popup-services-option">
+            <input type="checkbox" name="corte">
+            <label>Corte</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input type="checkbox" name="sobrancelha">
+            <label>Sobrancelhas</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input type="checkbox" name="barba">
+            <label>Barba</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input type="checkbox" name="hidratacao">
+            <label>Hidratação</label>
+          </div>
+        </div>
+
+        <button class="btn-popup-services" type="submit">Confirmar</button>
+      </form>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
