@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="assets/css/schedule.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/pop-up.css">
+
+  <!-- SCRIPTS -->
+  <script src="./assets/js/popup.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
@@ -148,8 +151,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>09:00-09:30</td>
+            <tr> <!-- 09:00-10:00 -->
+              <td>09:00-10:00</td>
               <td>
                 <input type="checkbox" name="schedule" id="schedule">
               </td>
@@ -170,8 +173,8 @@
               </td>
             </tr>
 
-            <tr>
-              <td>09:30-10:00</td>
+            <tr> <!-- 10:00-11:00 -->
+              <td>10:00-11:00</td>
               <td>
                 <input type="checkbox" name="schedule" id="schedule">
               </td>
@@ -192,8 +195,8 @@
               </td>
             </tr>
 
-            <tr>
-              <td>10:00-10:30</td>
+            <tr> <!-- 11:00-12:00 -->
+              <td>11:00-12:00</td>
               <td>
                 <input type="checkbox" name="schedule" id="schedule">
               </td>
@@ -214,8 +217,78 @@
               </td>
             </tr>
 
-            <tr>
-              <td>10:30-11:00</td>
+            <tr><!-- Almoço -->
+              <td colspan="7"><i>Almoço</i></td>
+            </tr>
+
+            <tr> <!-- 13:00-14:00 -->
+              <td>13:00-14:00</td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+            </tr>
+
+            <tr> <!-- 14:00-15:00 -->
+              <td>14:00-15:00</td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+            </tr>
+
+            <tr> <!-- 15:00-16:00 -->
+              <td>15:00-16:00</td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+              <td>
+                <input type="checkbox" name="schedule" id="schedule">
+              </td>
+            </tr>
+
+            <tr> <!-- 16:00-17:00 -->
+              <td>16:00-17:00</td>
               <td>
                 <input type="checkbox" name="schedule" id="schedule">
               </td>
@@ -239,7 +312,7 @@
         </table>
 
         <div class="btn-box-schedule">
-          <a class="btn" href="#">Confirmar</a>
+          <button class="btn btn-agendar">Agendar</button>
           <i>*Fechado aos domingos</i>
         </div>
       </div>
@@ -249,9 +322,9 @@
 
   <div class="popup">
     <div class="popup-box">
-      <img class="icon-close" src="./assets/icons/close.svg" width="20px" />
+      <img class="icon-close" src="./assets/icons/close.svg" width="20px" onclick="closePopup();" />
 
-      <form action="">
+      <form action="#">
         <label for="name">Nome: </label>
         <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
 
@@ -283,7 +356,7 @@
           </div>
         </div>
 
-        <button class="btn-popup-services" type="submit">Confirmar</button>
+        <button class="btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
       </form>
     </div>
   </div>

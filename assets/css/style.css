@@ -26,7 +26,7 @@ h2 {
   font-size: 3rem;
 }
 
-p, a {
+p, a, button {
   font-family: 'Quattrocento', serif;
 }
 
@@ -42,4 +42,7 @@ p, a {
   padding: .7rem 1.5rem;
   text-transform: uppercase;
   border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
