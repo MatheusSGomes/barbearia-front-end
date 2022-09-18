@@ -324,7 +324,17 @@
     <div class="popup-box">
       <img class="icon-close" src="./assets/icons/close.svg" width="20px" onclick="closePopup();" />
 
-      <form action="#">
+      <div class="popup-successful">
+        <img class="icon-successful" src="./assets/icons/success-popup.svg" width="120px" />
+        <p>Horário agendado com sucesso</p>
+      </div>
+
+      <div class="popup-error">
+        <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
+        <p>Não foi possível agendar o horário</p>
+      </div>
+
+      <form class="popup-form" action="#">
         <label for="name">Nome: </label>
         <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
 
@@ -356,7 +366,7 @@
           </div>
         </div>
 
-        <button class="btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
+        <button class="btn btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
       </form>
     </div>
   </div>
