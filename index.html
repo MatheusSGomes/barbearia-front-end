@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barbearia</title>
+  <link rel="shortcut icon" href="./assets/images/barber-logo.png" type="image/x-icon">
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,21 +32,23 @@
     <div class="container">
       <div class="navigation">
         <div class="nav-logo">
-          <img src="./assets/images/barber-logo.png">
+          <a href="#home">
+            <img src="./assets/images/barber-logo.png">
+          </a>
         </div>
         <div class="nav-menu">
           <ul class="box-menu">
             <li class="menu-item">
-              <a href="#home">Home</a>
+              <a class="menu-item-link" href="#home">Home</a>
             </li>
             <li class="menu-item">
-              <a href="#about">Sobre</a>
+              <a class="menu-item-link" href="#about">Sobre</a>
             </li>
             <li class="menu-item">
-              <a href="#services">Serviços</a>
+              <a class="menu-item-link" href="#services">Serviços</a>
             </li>
             <li class="menu-item">
-              <a href="#gallery">Galeria</a>
+              <a class="menu-item-link" href="#gallery">Galeria</a>
             </li>
           </ul>
         </div>
@@ -331,18 +334,18 @@
 
       <div class="popup-error">
         <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
-        <p>Não foi possível agendar o horário</p>
+        <p>Não foi possível agendar o horário, tente novamente</p>
       </div>
 
-      <form class="popup-form" action="#">
+      <form class="popup-form" action="#" method="POST">
         <label for="name">Nome: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
 
         <label for="name">Email: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
 
         <label for="name">Whatsapp: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off">
+        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
 
         <div class="popup-services">
           <div class="popup-services-option">

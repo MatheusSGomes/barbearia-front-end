@@ -32,7 +32,7 @@ nav {
   color: #fff;
   text-transform: uppercase;
   border-bottom: 1px solid transparent;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   border-bottom: 2px solid transparent;
 }
 
@@ -44,6 +44,11 @@ nav {
 .menu-item a {
   text-decoration: none;
   color: #fff;
+}
+
+.menu-item-link {
+  display: block;
+  padding: 1.5rem;
 }
 
 .navigation > .btn-box {

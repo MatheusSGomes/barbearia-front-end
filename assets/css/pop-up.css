@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -68,9 +68,7 @@
   border-radius: .5rem;
 }
 
-.popup-form {
-  /* display: none; */
-}
+
 
 .popup-successful {
   display: none;
