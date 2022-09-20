@@ -1,0 +1,41 @@
+.image-barber {
+  max-width: 450px;
+}
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-form {
+  padding: .5rem;
+  border-radius: .3rem;
+  border: 1px solid var(--primary-color);
+  margin-top: .3rem;
+  margin-bottom: .5rem;
+}
+
+.input-form:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+
+@media (max-width: 450px) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+}
