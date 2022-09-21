@@ -13,6 +13,10 @@
   padding: 4rem 0;
 }
 
+.calendar-container {
+  overflow-x: auto;
+}
+
 .calendar-table {
   width: 100%;
   border-collapse: collapse;

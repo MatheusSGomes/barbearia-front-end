@@ -1,0 +1,38 @@
+.schedule {
+  min-height: 85vh;
+  padding: 3rem 0;
+  background: #eee;
+}
+
+.schedule-container {
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow:hidden;
+  -webkit-border-radius: .7rem;
+     -moz-border-radius: .7rem;
+          border-radius: .7rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.schedule-table th, .schedule-table td {
+  padding: 1rem 0;
+}
+
+.schedule-table th {
+  background: var(--primary-color);
+}
+
+.schedule-table tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.schedule-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.6);
+}
+
