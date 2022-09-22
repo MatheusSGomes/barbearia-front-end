@@ -4,6 +4,7 @@ import Cookie from './HandleCookies.js';
 
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
 
+const errorMessages = document.querySelector('.error-messages');
 
 const config = {
   headers: {
@@ -33,9 +34,9 @@ function login(email, password) {
         window.location.href = "/dashboard.html";
     })
     .catch(function (error) {
+      errorMessages.innerHTML = 'E-mail ou senha inválidos';
       console.log(error.message);
     });
-
 }
 
 // LOGIN
