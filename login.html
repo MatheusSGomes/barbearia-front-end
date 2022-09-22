@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="./assets/css/login.css">
   <link rel="stylesheet" href="./assets/css/navbar.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+  <script src="./assets/js/login.js" defer></script>
+  <script src="./assets/js/dashboard.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
@@ -58,7 +62,8 @@
       </div>
 
       <div class="login-form">
-        <form>    
+        <form action="http://127.0.0.1:8000/api/login" method="post">
+          
           <div class="">
             <input type="email" id="email" class="input-form" placeholder="E-mail" autocomplete="off" />
           </div>
@@ -67,7 +72,7 @@
             <input type="password" id="password" class="input-form" placeholder="Senha" />
           </div>
 
-          <button type="button" class="btn">Login</button>
+          <button type="submit" class="btn">Login</button>
         </form>
       </div>
     </div>
