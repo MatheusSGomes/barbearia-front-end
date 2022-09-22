@@ -2,11 +2,41 @@ import Cookie from './HandleCookies.js';
 
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 
+// axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
+
+
 const config = {
   headers: {
     "authorization": Cookie.getCookie('token')
   }
 };
+
+const formLogin = document.querySelector('#form-login');
+formLogin.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const email = event.explicitOriginalTarget.elements.namedItem('email').value;
+  const password = event.explicitOriginalTarget.elements.namedItem('password').value;
+
+  login(email, password);
+});
+
+function login(email, password) {
+  axios
+    .post('http://127.0.0.1:8000/api/login', {
+      "email": email,
+      "password": password,
+    })
+    .then(function (response) {
+      Cookie
+        .setCookie('token', response.headers.authorization, 7);
+        window.location.href = "/dashboard.html";
+    })
+    .catch(function (error) {
+      console.log(error.message);
+    });
+
+}
 
 // LOGIN
 // axios
