@@ -1,5 +1,7 @@
 import Cookie from './HandleCookies.js';
 
+// axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
+
 // LOGIN
 // axios
 //   .post('http://127.0.0.1:8000/api/login', {
@@ -57,4 +59,25 @@ import Cookie from './HandleCookies.js';
 //   })
 //   .catch(function (error) {
 //     console.log(error)
+//   });
+
+// UPDATE - ATUALIZAR UM USUÁRIO
+// const data = {
+//   "name": "Ana Maria",
+//   "email": "ana-maria@email.com"
+// };
+
+// const config = {
+//   headers: {
+//     "authorization": Cookie.getCookie('token')
+//   }
+// };
+
+// axios
+//   .put('http://127.0.0.1:8000/api/usuario/4', data, config)
+//   .then(function (response) {
+//     console.log(response.data);
+//   })
+//   .catch(function (response) {
+//     console.log(response);
 //   });
