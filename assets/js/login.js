@@ -2,6 +2,12 @@ import Cookie from './HandleCookies.js';
 
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 
+const config = {
+  headers: {
+    "authorization": Cookie.getCookie('token')
+  }
+};
+
 // LOGIN
 // axios
 //   .post('http://127.0.0.1:8000/api/login', {
@@ -67,12 +73,6 @@ import Cookie from './HandleCookies.js';
 //   "email": "ana-maria@email.com"
 // };
 
-// const config = {
-//   headers: {
-//     "authorization": Cookie.getCookie('token')
-//   }
-// };
-
 // axios
 //   .put('http://127.0.0.1:8000/api/usuario/4', data, config)
 //   .then(function (response) {
@@ -80,4 +80,15 @@ import Cookie from './HandleCookies.js';
 //   })
 //   .catch(function (response) {
 //     console.log(response);
+//   });
+
+
+// DELETE - APAGAR UM USUÁRIO
+// axios
+//   .delete('http://127.0.0.1:8000/api/usuario/8', config)
+//   .then(function (response) {
+//     console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
 //   });
