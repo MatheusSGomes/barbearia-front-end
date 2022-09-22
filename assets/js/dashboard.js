@@ -1,16 +1,37 @@
 const url = 'http://127.0.0.1:8000/api/';
-
 const id = 18;
+const tbody = document.querySelector('.schedule-table-tbody');
+
+
+            
 
 // INDEX
-// axios
-//   .get(url+'agenda')
-//   .then(function (response) {
-//     console.log(response.data);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
+axios
+  .get(url+'agenda')
+  .then(function (response) {
+
+    if (response.data !== '') {
+      response.data.forEach((user) => {
+        const horario = user.horario.split('-');
+        
+        tbody.innerHTML += `
+          <tr>
+            <td>${user.nome}</td>
+            <td>${horario[0]}</td>
+            <td>${horario[1] + horario[2]}</td>
+            <td>${user.corte == 1 ? 'Sim' : 'Não'}</td>
+            <td>${user.barba == 1 ? 'Sim' : 'Não'}</td>
+            <td>${user.sobrancelhas == 1 ? 'Sim' : 'Não'}</td>
+            <td>${user.hidratacao == 1 ? 'Sim' : 'Não'}</td>
+          </tr>
+        `;
+      });
+    }
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 // STORE
 // axios
