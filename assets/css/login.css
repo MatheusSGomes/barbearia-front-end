@@ -3,6 +3,7 @@
 }
 
 .error-messages {
+  display: none;
   color: #fff;
   background-color: rgba(137, 0, 0, .5);
   border-radius: 1rem;

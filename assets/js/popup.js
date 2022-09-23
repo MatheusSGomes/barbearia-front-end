@@ -2,14 +2,21 @@ const popup = document.querySelector('.popup');
 const btnAgendar = document.querySelector('.btn-agendar');
 const btnConfirmar = document.querySelector('.btn-popup-services');
 const popupForm = document.querySelector('.popup-form');
+const iconSuccessful = document.querySelector('.popup-successful');
+const iconError = document.querySelector('.popup-error');
 
 function openPopup() {
   popup.style.display = 'flex';
+  iconSuccessful.style.display = 'none';
+  iconError.style.display = 'none';
+  popupForm.style.display = 'block';
+  popupForm.reset();
 }
 
 function closePopup() {
   const btnClose = document.querySelector('.icon-close');
   popup.style.display = 'none';
+  popupForm.reset();
 }
 
 btnAgendar.addEventListener('click', (e) => {
@@ -20,11 +27,37 @@ btnAgendar.addEventListener('click', (e) => {
 btnConfirmar.addEventListener('click', (e) => {
   e.preventDefault();
   
-  const iconSuccessful = document.querySelector('.popup-successful');
-  iconSuccessful.style.display = 'block';
+  
+  
+  const inputNome = document.getElementsByName('nome')[0].value;
+  const inputEmail = document.getElementsByName('email')[0].value;
+  const inputWhatsapp = document.getElementsByName('whatsapp')[0].value;
+  const inputCorte = document.getElementsByName('corte')[0].value;
+  const inputSobrancelhas = document.getElementsByName('sobrancelhas')[0].value;
+  const inputBarba = document.getElementsByName('barba')[0].value;
+  const inputHidratacao = document.getElementsByName('hidratacao')[0].value;
 
-  const iconError = document.querySelector('.popup-error');
-  iconError.style.display = 'block';
-
-  popupForm.style.display = 'none';
+  axios
+    .post('http://127.0.0.1:8000/api/agenda', {
+      "nome": inputNome,
+      "email": inputEmail,
+      "whatsapp": inputWhatsapp,
+      "servicos": {
+          "corte": inputCorte == 'on' ? 1 : 0,
+          "sobrancelhas": inputSobrancelhas == 'on' ? 1 : 0,
+          "barba": inputBarba == 'on' ? 1 : 0,
+          "hidratacao": inputHidratacao == 'on' ? 1 : 0
+      },
+      "horario": "seg-15-16"  
+    })
+    .then(function (response) {
+      iconSuccessful.style.display = 'block';
+      popupForm.style.display = 'none';
+      console.log(response);
+    })
+    .catch(function (error) {
+      iconError.style.display = 'block';
+      popupForm.style.display = 'none';
+      console.log(error);
+    });
 })

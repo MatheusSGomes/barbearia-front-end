@@ -35,6 +35,7 @@ function login(email, password) {
     })
     .catch(function (error) {
       errorMessages.innerHTML = 'E-mail ou senha inválidos';
+      errorMessages.style.display = 'block';
       console.log(error.message);
     });
 }

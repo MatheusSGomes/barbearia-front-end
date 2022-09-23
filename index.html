@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="assets/css/pop-up.css">
 
   <!-- SCRIPTS -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
   <script src="./assets/js/popup.js" defer></script>
   <script src="./assets/js/HandleCookies.js" type="module" defer></script>
   <!-- <script type="module">
@@ -347,34 +348,34 @@
         <p>Não foi possível agendar o horário, tente novamente</p>
       </div>
 
-      <form class="popup-form" action="#" method="POST">
+      <form method="POST" class="popup-form" id="form-schedule">
         <label for="name">Nome: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
+        <input class="input-popup" type="text" name="nome" id="name" autocomplete="off" />
 
         <label for="name">Email: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
+        <input class="input-popup" type="text" name="email" id="name" autocomplete="off" />
 
         <label for="name">Whatsapp: </label>
-        <input class="input-popup" type="text" name="name" id="name" autocomplete="off" />
+        <input class="input-popup" type="text" name="whatsapp" id="name" autocomplete="off" />
 
         <div class="popup-services">
           <div class="popup-services-option">
-            <input type="checkbox" name="corte">
+            <input class="input-popup" type="checkbox" name="corte">
             <label>Corte</label>
           </div>
           
           <div class="popup-services-option">
-            <input type="checkbox" name="sobrancelha">
+            <input class="input-popup" type="checkbox" name="sobrancelhas">
             <label>Sobrancelhas</label>
           </div>
           
           <div class="popup-services-option">
-            <input type="checkbox" name="barba">
+            <input class="input-popup" type="checkbox" name="barba">
             <label>Barba</label>
           </div>
           
           <div class="popup-services-option">
-            <input type="checkbox" name="hidratacao">
+            <input class="input-popup" type="checkbox" name="hidratacao">
             <label>Hidratação</label>
           </div>
         </div>
