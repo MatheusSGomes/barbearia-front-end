@@ -1,15 +1,16 @@
 import Cookie from './HandleCookies.js';
 
+const url = 'http://127.0.0.1:8000/api/';
+const id = 18;
+const tbody = document.querySelector('.schedule-table-tbody');
+const logoutBtn = document.querySelector('#logout');
+
 window.onload = (event) => {
   if (Cookie.getCookie('token') == '') {
     window.stop();
     window.history.back();
   }  
 };
-
-const url = 'http://127.0.0.1:8000/api/';
-const id = 18;
-const tbody = document.querySelector('.schedule-table-tbody');
 
 // INDEX
 axios
@@ -36,7 +37,7 @@ axios
     console.log(response.data);
   })
   .catch(function (error) {
-    console.log(error);
+    console.log(error.message);
   });
 
 // STORE
@@ -101,3 +102,8 @@ axios
 //   });
 
 
+logoutBtn.addEventListener('click', function() {
+  Cookie
+    .setCookie('token', '');
+  document.location.reload();
+});
