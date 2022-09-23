@@ -1,9 +1,15 @@
+import Cookie from './HandleCookies.js';
+
+window.onload = (event) => {
+  if (Cookie.getCookie('token') == '') {
+    window.stop();
+    window.history.back();
+  }  
+};
+
 const url = 'http://127.0.0.1:8000/api/';
 const id = 18;
 const tbody = document.querySelector('.schedule-table-tbody');
-
-
-            
 
 // INDEX
 axios
