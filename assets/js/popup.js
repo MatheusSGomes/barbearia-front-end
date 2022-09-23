@@ -5,6 +5,20 @@ const popupForm = document.querySelector('.popup-form');
 const iconSuccessful = document.querySelector('.popup-successful');
 const iconError = document.querySelector('.popup-error');
 
+// const url = new URL(parent.location.href);
+// console.log(url.searchParams.get('horario'));
+
+
+// console.log(document.querySelectorAll('input[type=checkbox]#schedule'))
+const inputsCheckbox = document.querySelectorAll('input[type=radio]#schedule');
+
+inputsCheckbox.forEach(input => {
+  console.log(input);
+  console.log(input.checked);
+  console.log(input.dataset.horario);
+})
+
+
 function openPopup() {
   popup.style.display = 'flex';
   iconSuccessful.style.display = 'none';
