@@ -4,27 +4,14 @@ const btnConfirmar = document.querySelector('.btn-popup-services');
 const popupForm = document.querySelector('.popup-form');
 const iconSuccessful = document.querySelector('.popup-successful');
 const iconError = document.querySelector('.popup-error');
-
-// const url = new URL(parent.location.href);
-// console.log(url.searchParams.get('horario'));
-
-
-// console.log(document.querySelectorAll('input[type=checkbox]#schedule'))
+const url = new URL(parent.location.href);
 const inputsCheckbox = document.querySelectorAll('input[type=radio]#schedule');
-
-inputsCheckbox.forEach(input => {
-  console.log(input);
-  console.log(input.checked);
-  console.log(input.dataset.horario);
-})
-
 
 function openPopup() {
   popup.style.display = 'flex';
   iconSuccessful.style.display = 'none';
   iconError.style.display = 'none';
   popupForm.style.display = 'block';
-  popupForm.reset();
 }
 
 function closePopup() {
@@ -35,21 +22,27 @@ function closePopup() {
 
 btnAgendar.addEventListener('click', (e) => {
   e.preventDefault();
+
+  inputsCheckbox.forEach(input => {
+    if (input.checked) {
+      url.searchParams.append('horario', input.dataset.horario);
+    }
+  })
+
   openPopup();
 });
 
 btnConfirmar.addEventListener('click', (e) => {
   e.preventDefault();
   
-  
-  
   const inputNome = document.getElementsByName('nome')[0].value;
   const inputEmail = document.getElementsByName('email')[0].value;
   const inputWhatsapp = document.getElementsByName('whatsapp')[0].value;
-  const inputCorte = document.getElementsByName('corte')[0].value;
-  const inputSobrancelhas = document.getElementsByName('sobrancelhas')[0].value;
-  const inputBarba = document.getElementsByName('barba')[0].value;
-  const inputHidratacao = document.getElementsByName('hidratacao')[0].value;
+
+  const inputCorte = document.getElementsByName('corte')[0].checked;
+  const inputSobrancelhas = document.getElementsByName('sobrancelhas')[0].checked;
+  const inputBarba = document.getElementsByName('barba')[0].checked;
+  const inputHidratacao = document.getElementsByName('hidratacao')[0].checked;
 
   axios
     .post('http://127.0.0.1:8000/api/agenda', {
@@ -57,12 +50,12 @@ btnConfirmar.addEventListener('click', (e) => {
       "email": inputEmail,
       "whatsapp": inputWhatsapp,
       "servicos": {
-          "corte": inputCorte == 'on' ? 1 : 0,
-          "sobrancelhas": inputSobrancelhas == 'on' ? 1 : 0,
-          "barba": inputBarba == 'on' ? 1 : 0,
-          "hidratacao": inputHidratacao == 'on' ? 1 : 0
+          "corte": inputCorte === true ? 1 : 0,
+          "sobrancelhas": inputSobrancelhas === true ? 1 : 0,
+          "barba": inputBarba === true ? 1 : 0,
+          "hidratacao": inputHidratacao === true ? 1 : 0
       },
-      "horario": "seg-15-16"  
+      "horario": url.searchParams.get('horario')
     })
     .then(function (response) {
       iconSuccessful.style.display = 'block';
