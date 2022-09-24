@@ -25,7 +25,7 @@ axios
           <tr>
             <td>${user.nome}</td>
             <td>${horario[0]}</td>
-            <td>${horario[1] + horario[2]}</td>
+            <td>Das ${horario[1]}h às ${horario[2]}h</td>
             <td>${user.corte == 1 ? 'Sim' : 'Não'}</td>
             <td>${user.barba == 1 ? 'Sim' : 'Não'}</td>
             <td>${user.sobrancelhas == 1 ? 'Sim' : 'Não'}</td>
