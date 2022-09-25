@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste</title>
+  <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- <script defer src="./assets/js/popup.js"></script> -->
+  <!-- <link href="./assets/css/pop-up.css" rel="stylesheet"> -->
+</head>
+<body>
+  <h2>Contador</h2>
+  <div x-data="{count: 0}">
+    <button x-on:click="count++">Aumentar</button>
+    <span x-text="count"></span>
+  </div>
+
+  <h2>Toggle</h2>
+  <div x-data="{ open: false }">
+    <button @click="open = ! open">Abrir / Fechar</button>
+    <div x-show="open" @click.outside="open = false" x-transition>Conteúdo!</div>
+  </div>
+
+  <h2>Busca</h2>
+  <div
+    x-data="{
+        search: '',
+ 
+        items: ['foo', 'bar', 'baz'],
+ 
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+  >
+    <input x-model="search" placeholder="Search...">
+ 
+    <ul>
+        <template x-for="item in filteredItems" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+
+    <h2>Máscara</h2>
+    <p>Digite uma data: </p>
+    <input x-mask="99/99/9999" />
+
+    <p>Digite um telefone: </p>
+    <input x-mask="(99) 9.9999-9999" />
+
+    <p>Digite um e-mail</p>
+    <input x-mask="*@*.*.*" />
+  </div>
+
+    <div x-data="{ open: false }">
+      <button class="btn btn-agendar" @click="open = ! open">Agendar</button>
+    
+      <div x-show="open" @click.outside="open = false" class="popup">
+        <div class="popup-box">
+          <img class="icon-close" src="./assets/icons/close.svg" width="20px" onclick="closePopup();" />
+    
+          <div class="popup-successful">
+            <img class="icon-successful" src="./assets/icons/success-popup.svg" width="120px" />
+            <p>Horário agendado com sucesso</p>
+          </div>
+    
+          <div class="popup-error">
+            <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
+            <p>Não foi possível agendar o horário, tente novamente</p>
+          </div>
+    
+          <form method="POST" class="popup-form" id="form-schedule">
+            <label for="name">Nome: </label>
+            <input class="input-popup" type="text" name="nome" id="name" autocomplete="off" />
+    
+            <label for="name">Email: </label>
+            <input class="input-popup" type="text" name="email" id="email" autocomplete="off" />
+    
+            <label for="name">Whatsapp: </label>
+            <input class="input-popup" type="text" name="whatsapp" id="whatsapp" autocomplete="off" />
+    
+            <div class="popup-services">
+              <div class="popup-services-option">
+                <input class="input-popup" type="checkbox" name="corte">
+                <label>Corte</label>
+              </div>
+              
+              <div class="popup-services-option">
+                <input class="input-popup" type="checkbox" name="sobrancelhas">
+                <label>Sobrancelhas</label>
+              </div>
+              
+              <div class="popup-services-option">
+                <input class="input-popup" type="checkbox" name="barba">
+                <label>Barba</label>
+              </div>
+              
+              <div class="popup-services-option">
+                <input class="input-popup" type="checkbox" name="hidratacao">
+                <label>Hidratação</label>
+              </div>
+            </div>
+    
+            <button class="btn btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- <div class="min-h-screen p-16 bg-gray-100"> -->
+
+
+
+<div x-data="{ categories: [2,3] }">
+    <input type="checkbox" value="1" x-model="categories">
+    <input type="checkbox" value="2" x-model="categories">
+    <input type="checkbox" value="3" x-model="categories">
+    <input type="checkbox" value="4" x-model="categories">
+    <input type="checkbox" value="5" x-model="categories">
+    <input type="checkbox" value="6" x-model="categories">
+    <input type="checkbox" value="7" x-model="categories">
+	<span x-text="categories.join(', ')"></span>
+</div>
+	
+	
+	
+</div>
+
+
+<!-- Dev tools -->
+<div
+	id="alpine-devtools"
+	x-data="devtools()"
+	x-show="alpines.length"
+	x-init="start()">
+</div>
+
+
+
+<!-- TESTE RADIO -->
+
+<div x-data="{ answer: '' }">
+  <input type="radio" id="resposta" name="resposta" value="yes" x-model="answer">
+  <input type="radio" id="resposta" name="resposta" value="no" x-model="answer">
+   
+  Answer: <span x-text="answer"></span>
+</div>
+
+
+</body>
+</html>

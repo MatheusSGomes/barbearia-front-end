@@ -28,10 +28,10 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
   <script src="./assets/js/popup.js" defer></script>
   <script src="./assets/js/HandleCookies.js" type="module" defer></script>
-  <!-- <script type="module">
-    import Cookie from './assets/js/HandleCookies.js';
-    console.log(Cookie.setCookie('oi', 'teste'));
-  </script> -->
+  
+  <!-- ALPINE JS -->
+  <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -144,13 +144,14 @@
     </div>
   </section>
 
-  <section class="schedule" id="schedule">
-    <div class="schedule-overlay">
-      <div class="container">
-        <h2>Agendar horário</h2>
-        <p>Escolha o horário abaixo</p>
-
-
+  <section x-data="{ schedule: '' }">
+    <div class="schedule" id="schedule">
+      <div class="schedule-overlay">
+        <div class="container">
+          <h2>Agendar horário</h2>
+          <p>Escolha o horário abaixo</p>
+  
+  
           <div class="calendar-container">
             <table class="calendar-table">
               <thead>
@@ -168,66 +169,66 @@
                 <tr> <!-- 09:00-10:00 -->
                   <td>09:00-10:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-09-10" x-model="schedule" value="Segunda das 09h às 10h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-09-10" x-model="schedule" value="Terça das 09h às 10h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-09-10" x-model="schedule" value="Quarta das 09h às 10h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-09-10" x-model="schedule" value="Quinta das 09h às 10h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-09-10" x-model="schedule" value="Sexta das 09h às 10h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-09-10">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-09-10" x-model="schedule" value="Sábado das 09h às 10h">
                   </td>
                 </tr>
     
                 <tr> <!-- 10:00-11:00 -->
                   <td>10:00-11:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-10-11" x-model="schedule" value="Segunda das 10h às 11h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-10-11" x-model="schedule" value="Terça das 10h às 11h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-10-11" x-model="schedule" value="Quarta das 10h às 11h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-10-11" x-model="schedule" value="Quinta das 10h às 11h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-10-11" x-model="schedule" value="Sexta das 10h às 11h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-10-11">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-10-11" x-model="schedule" value="Sábado das 10h às 11h">
                   </td>
                 </tr>
     
                 <tr> <!-- 11:00-12:00 -->
                   <td>11:00-12:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-11-12" x-model="schedule" value="Segunda das 11h às 12h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-11-12" x-model="schedule" value="Terça das 11h às 12h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-11-12" x-model="schedule" value="Quarta das 11h às 12h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-11-12" x-model="schedule" value="Quinta das 11h às 12h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-11-12" x-model="schedule" value="Sexta das 11h às 12h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-11-12">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-11-12" x-model="schedule" value="Sábado das 11h às 12h">
                   </td>
                 </tr>
     
@@ -238,155 +239,155 @@
                 <tr> <!-- 13:00-14:00 -->
                   <td>13:00-14:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-13-14" x-model="schedule" value="Segunda das 13h às 14h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-13-14" x-model="schedule" value="Terça das 13h às 14h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-13-14" x-model="schedule" value="Quarta das 13h às 14h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-13-14" x-model="schedule" value="Quinta das 13h às 14h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-13-14" x-model="schedule" value="Sexta das 13h às 14h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-13-14">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-13-14" x-model="schedule" value="Sábado das 13h às 14h">
                   </td>
                 </tr>
     
                 <tr> <!-- 14:00-15:00 -->
                   <td>14:00-15:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-14-15" x-model="schedule" value="Segunda das 14h às 15h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-14-15" x-model="schedule" value="Terça das 14h às 15h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-14-15" x-model="schedule" value="Quarta das 14h às 15h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-14-15" x-model="schedule" value="Quinta das 14h às 15h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-14-15" x-model="schedule" value="Sexta das 14h às 15h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-14-15">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-14-15" x-model="schedule" value="Sábado das 14h às 15h">
                   </td>
                 </tr>
     
                 <tr> <!-- 15:00-16:00 -->
                   <td>15:00-16:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-15-16" x-model="schedule" value="Segunda das 15h às 16h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-15-16" x-model="schedule" value="Terça das 15h às 16h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-15-16" x-model="schedule" value="Quarta das 15h às 16h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-15-16" x-model="schedule" value="Quinta das 15h às 16h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-15-16" x-model="schedule" value="Sexta das 15h às 16h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-15-16">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-15-16" x-model="schedule" value="Sábado das 15h às 16h">
                   </td>
                 </tr>
     
                 <tr> <!-- 16:00-17:00 -->
                   <td>16:00-17:00</td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="seg-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="seg-16-17" x-model="schedule" value="Segunda das 16h às 17h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="ter-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="ter-16-17" x-model="schedule" value="Terça das 16h às 17h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qua-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qua-16-17" x-model="schedule" value="Quarta das 16h às 17h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="qui-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="qui-16-17" x-model="schedule" value="Quinta das 16h às 17h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sex-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sex-16-17" x-model="schedule" value="Sexta das 16h às 17h">
                   </td>
                   <td>
-                    <input type="radio" name="schedule" id="schedule" data-horario="sab-16-17">
+                    <input type="radio" name="schedule" id="schedule" data-horario="sab-16-17" x-model="schedule" value="Sábado das 16h às 17h">
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-
+  
           <div class="btn-box-schedule">
             <button class="btn btn-agendar">Agendar</button>
             <i>*Fechado aos domingos</i>
           </div>
-
-
-      </div>
-    </div>
-
-  </section>
-
-  <div class="popup">
-    <div class="popup-box">
-      <img class="icon-close" src="./assets/icons/close.svg" width="20px" onclick="closePopup();" />
-
-      <div class="popup-successful">
-        <img class="icon-successful" src="./assets/icons/success-popup.svg" width="120px" />
-        <p>Horário agendado com sucesso</p>
-      </div>
-
-      <div class="popup-error">
-        <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
-        <p>Não foi possível agendar o horário, tente novamente</p>
-      </div>
-
-      <form method="POST" class="popup-form" id="form-schedule">
-        <label for="name">Nome: </label>
-        <input class="input-popup" type="text" name="nome" id="name" autocomplete="off" />
-
-        <label for="name">Email: </label>
-        <input class="input-popup" type="text" name="email" id="email" autocomplete="off" />
-
-        <label for="name">Whatsapp: </label>
-        <input class="input-popup" type="text" name="whatsapp" id="whatsapp" autocomplete="off" />
-
-        <div class="popup-services">
-          <div class="popup-services-option">
-            <input class="input-popup" type="checkbox" name="corte">
-            <label>Corte</label>
-          </div>
-          
-          <div class="popup-services-option">
-            <input class="input-popup" type="checkbox" name="sobrancelhas">
-            <label>Sobrancelhas</label>
-          </div>
-          
-          <div class="popup-services-option">
-            <input class="input-popup" type="checkbox" name="barba">
-            <label>Barba</label>
-          </div>
-          
-          <div class="popup-services-option">
-            <input class="input-popup" type="checkbox" name="hidratacao">
-            <label>Hidratação</label>
-          </div>
+  
         </div>
-
-        <button class="btn btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
-      </form>
+      </div>
     </div>
-  </div>
+  
+    <div class="popup">
+      <div class="popup-box">
+        <img class="icon-close" src="./assets/icons/close.svg" width="20px" onclick="closePopup();" />
+  
+        <div class="popup-successful">
+          <img class="icon-successful" src="./assets/icons/success-popup.svg" width="120px" />
+          <p>Horário agendado com sucesso</p>
+        </div>
+  
+        <div class="popup-error">
+          <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
+          <p>Não foi possível agendar o horário, tente novamente</p>
+        </div>
+  
+        <form method="POST" class="popup-form" id="form-schedule">
+          <label for="name">Nome: </label>
+          <input class="input-popup" type="text" name="nome" id="name" autocomplete="off" />
+  
+          <label for="name">Email: </label>
+          <input class="input-popup" type="text" name="email" id="email" autocomplete="off" />
+  
+          <label for="name">Whatsapp: </label>
+          <input class="input-popup" type="text" name="whatsapp" id="whatsapp" autocomplete="off" />
+  
+          <div class="popup-services">
+            <div class="popup-services-option">
+              <input class="input-popup" type="checkbox" name="corte">
+              <label>Corte</label>
+            </div>
+            
+            <div class="popup-services-option">
+              <input class="input-popup" type="checkbox" name="sobrancelhas">
+              <label>Sobrancelhas</label>
+            </div>
+            
+            <div class="popup-services-option">
+              <input class="input-popup" type="checkbox" name="barba">
+              <label>Barba</label>
+            </div>
+            
+            <div class="popup-services-option">
+              <input class="input-popup" type="checkbox" name="hidratacao">
+              <label>Hidratação</label>
+            </div>
+          </div>
+  
+          <button class="btn btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
+          <div class="schedule-time">Horário: <span x-text="schedule"></span></div>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container">
