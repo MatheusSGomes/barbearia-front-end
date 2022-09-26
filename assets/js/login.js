@@ -32,7 +32,7 @@ function login(email, password) {
     .then(function (response) {
       Cookie
         .setCookie('token', response.headers.authorization, 7);
-        window.location.href = "/dashboard.html";
+        window.location.href = "https://matheussgomes.github.io/barbearia-front-end/dashboard.html";
     })
     .catch(function (error) {
       errorMessages.innerHTML = 'E-mail ou senha inválidos';
