@@ -1,7 +1,6 @@
 import Cookie from './HandleCookies.js';
 
-const url = 'http://127.0.0.1:8000/api/';
-const id = 18;
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');
 
@@ -14,7 +13,7 @@ window.onload = (event) => {
 
 // INDEX
 axios
-  .get(url+'agenda')
+  .get(`${API}agenda`)
   .then(function (response) {
 
     if (response.data !== '') {

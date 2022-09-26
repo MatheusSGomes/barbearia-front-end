@@ -1,3 +1,4 @@
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 const popup = document.querySelector('.popup');
 const btnAgendar = document.querySelector('.btn-agendar');
 const btnConfirmar = document.querySelector('.btn-popup-services');
@@ -45,7 +46,7 @@ btnConfirmar.addEventListener('click', (e) => {
   const inputHidratacao = document.getElementsByName('hidratacao')[0].checked;
 
   axios
-    .post('http://127.0.0.1:8000/api/agenda', {
+    .post(`${API}agenda`, {
       "nome": inputNome,
       "email": inputEmail,
       "whatsapp": inputWhatsapp,

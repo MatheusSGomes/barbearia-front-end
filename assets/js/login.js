@@ -4,6 +4,7 @@ import Cookie from './HandleCookies.js';
 
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
 
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 const errorMessages = document.querySelector('.error-messages');
 
 const config = {
@@ -24,7 +25,7 @@ formLogin.addEventListener('submit', (event) => {
 
 function login(email, password) {
   axios
-    .post('http://127.0.0.1:8000/api/login', {
+    .post(`${API}login`, {
       "email": email,
       "password": password,
     })
@@ -58,8 +59,8 @@ function login(email, password) {
 // REGISTER
 // axios
 //   .post('http://127.0.0.1:8000/api/register', {
-//     "name": "Leandra",
-//     "email": "leandra@email.com",
+//     "name": "admin",
+//     "email": "admin@email.com",
 //     "password": "12345678",
 //   })
 //   .then(function (response) {
