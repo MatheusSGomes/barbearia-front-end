@@ -1,15 +1,19 @@
 import Cookie from './HandleCookies.js';
 
+// const URL = "https://matheussgomes.github.io/barbearia-front-end/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+const API = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:5500/";
+
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
 
 window.onload = (event) => {
   if (Cookie.getCookie('token')) {
-    document.location.href = "https://matheussgomes.github.io/barbearia-front-end/dashboard.html";
+    document.location.href = `${URL}dashboard.html`;
   }
 }
 
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 const errorMessages = document.querySelector('.error-messages');
 
 const config = {
@@ -37,7 +41,7 @@ function login(email, password) {
     .then(function (response) {
       Cookie
         .setCookie('token', response.headers.authorization, 7);
-        window.location.href = "https://matheussgomes.github.io/barbearia-front-end/dashboard.html";
+        window.location.href = `${URL}dashboard.html`;
     })
     .catch(function (error) {
       errorMessages.innerHTML = 'E-mail ou senha inválidos';

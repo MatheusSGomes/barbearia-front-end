@@ -1,13 +1,19 @@
 import Cookie from './HandleCookies.js';
 
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const URL = "https://matheussgomes.github.io/barbearia-front-end/";
+const API = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:5500/";
+
 const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');
+const formNewUser = document.querySelector('#form-new-user');
 
 window.onload = (event) => {
   if (Cookie.getCookie('token') == '') {
     window.stop();
-    document.location.href = "https://matheussgomes.github.io/barbearia-front-end/login.html";
+    // document.location.href = "https://matheussgomes.github.io/barbearia-front-end/login.html";
+    document.location.href = `${URL}login.html`;
   }  
 };
 
@@ -38,6 +44,16 @@ axios
   .catch(function (error) {
     console.log(error.message);
   });
+
+formNewUser.addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const name = event.explicitOriginalTarget.elements.namedItem('name').value;
+  const email = event.explicitOriginalTarget.elements.namedItem('email').value;
+  const password = event.explicitOriginalTarget.elements.namedItem('password').value;
+
+  console.log(name, email, password);
+})
 
 // STORE
 // axios

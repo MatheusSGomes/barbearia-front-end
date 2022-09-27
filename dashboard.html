@@ -19,6 +19,11 @@
   <link rel="stylesheet" href="./assets/css/dashboard.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
 
+  <!-- ALPINE JS -->
+  <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
   <script src="./assets/js/HandleCookies.js" type="module" defer></script>
   <script src="./assets/js/dashboard.js" type="module" defer></script>
@@ -59,8 +64,23 @@
   </nav>
   
   <section class="schedule">
-    <div class="container">
-      <h1>Agenda de clientes</h1>
+    <div class="container" x-data="{ open: false }">
+      <div class="schedule-title">
+        <h1>Agenda de clientes</h1>
+        <button class="btn" @click="open = ! open">Novo Usuário</button>
+      </div>
+
+      <div class="new-user" x-show="open" @click.outside="open = false" x-transition>
+        <form action="" method="post" id="form-new-user" class="form-new-user">
+          <div class="error-messages"></div>
+          <input type="text" name="name" id="name" class="input-form" placeholder="Nome" autocomplete="off" />
+
+          <input type="email" name="email" id="email" class="input-form" placeholder="E-mail" autocomplete="off" />
+
+          <input type="password" name="password" id="password" class="input-form" placeholder="Senha" />
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+      </div>
 
       <div class="schedule-container">
         <table class="schedule-table">

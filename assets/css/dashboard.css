@@ -36,3 +36,34 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
+.input-form {
+  padding: .5rem;
+  border-radius: .3rem;
+  border: 1px solid var(--primary-color);
+  margin-top: .3rem;
+  margin-bottom: .5rem;
+  background-color: #eee;
+}
+
+.input-form:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.schedule-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-user {
+  background-color: white;
+  margin: 1.5rem 0;
+  padding: 2rem 0;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.form-new-user {
+  text-align: center;
+}
