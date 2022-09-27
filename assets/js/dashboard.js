@@ -7,7 +7,7 @@ const logoutBtn = document.querySelector('#logout');
 window.onload = (event) => {
   if (Cookie.getCookie('token') == '') {
     window.stop();
-    window.history.back();
+    document.location.href = "https://matheussgomes.github.io/barbearia-front-end/login.html";
   }  
 };
 
