@@ -1,8 +1,13 @@
 import Cookie from './HandleCookies.js';
 
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
-
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
+
+window.onload = (event) => {
+  if (Cookie.getCookie('token')) {
+    document.location.href = "https://matheussgomes.github.io/barbearia-front-end/dashboard.html";
+  }
+}
 
 const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 const errorMessages = document.querySelector('.error-messages');
