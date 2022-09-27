@@ -71,8 +71,8 @@
       </div>
 
       <div class="new-user" x-show="open" @click.outside="open = false" x-transition>
+        <div class="error-messages"></div>
         <form action="" method="post" id="form-new-user" class="form-new-user">
-          <div class="error-messages"></div>
           <input type="text" name="name" id="name" class="input-form" placeholder="Nome" autocomplete="off" />
 
           <input type="email" name="email" id="email" class="input-form" placeholder="E-mail" autocomplete="off" />

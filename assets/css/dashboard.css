@@ -67,3 +67,15 @@
 .form-new-user {
   text-align: center;
 }
+
+.error-messages {
+  display: none;
+  color: #fff;
+  background-color: rgba(137, 0, 0, .5);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 4px;
+  margin: 4px 0px;
+  width: 30rem;
+  margin: 0 auto;
+} 

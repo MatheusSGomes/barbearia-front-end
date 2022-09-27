@@ -8,6 +8,7 @@ const URL = "http://127.0.0.1:5500/";
 const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');
 const formNewUser = document.querySelector('#form-new-user');
+const errorMessages = document.querySelector('.error-messages');
 
 window.onload = (event) => {
   if (Cookie.getCookie('token') == '') {
@@ -52,7 +53,22 @@ formNewUser.addEventListener('submit', function(event) {
   const email = event.explicitOriginalTarget.elements.namedItem('email').value;
   const password = event.explicitOriginalTarget.elements.namedItem('password').value;
 
-  console.log(name, email, password);
+// REGISTER
+  axios
+    .post(`${API}register`, {
+      "name": name,
+      "email": email,
+      "password": password,
+    })
+    .then(function (response) {
+      console.log(response.data);
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+      errorMessages.style.display = "block";
+      errorMessages.innerHTML = error.message;
+    });
 })
 
 // STORE
