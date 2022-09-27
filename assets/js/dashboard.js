@@ -9,6 +9,7 @@ const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');
 const formNewUser = document.querySelector('#form-new-user');
 const errorMessages = document.querySelector('.error-messages');
+const successMessages = document.querySelector('.success-messages');
 
 window.onload = (event) => {
   if (Cookie.getCookie('token') == '') {
@@ -61,13 +62,17 @@ formNewUser.addEventListener('submit', function(event) {
       "password": password,
     })
     .then(function (response) {
-      console.log(response.data);
-      console.log(response);
+      // console.log(response.data);
+      // console.log(response);
+      successMessages.style.display = "block";
+      successMessages.innerHTML = response.data.message;
+      formNewUser.reset();
     })
     .catch(function (error) {
-      console.log(error);
+      // console.log(error);
       errorMessages.style.display = "block";
-      errorMessages.innerHTML = error.message;
+      errorMessages.innerHTML = error.response.data.message;
+      formNewUser.reset();
     });
 })
 
