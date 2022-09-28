@@ -37,6 +37,13 @@ btnAgendar.addEventListener('click', (e) => {
 
 btnConfirmar.addEventListener('click', (e) => {
   e.preventDefault();
+
+  const imgElement = document.createElement('img');
+  imgElement.setAttribute('src', './assets/icons/loading.svg');
+  imgElement.setAttribute('width', '40px');
+
+  btnConfirmar.textContent = '';
+  btnConfirmar.appendChild(imgElement); 
   
   const inputNome = document.getElementsByName('nome')[0].value;
   const inputEmail = document.getElementsByName('email')[0].value;

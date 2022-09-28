@@ -1,9 +1,9 @@
 import Cookie from './HandleCookies.js';
 
-const URL = "https://matheussgomes.github.io/barbearia-front-end/";
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-// const API = "http://127.0.0.1:8000/api/";
-// const URL = "http://127.0.0.1:5500/";
+// const URL = "https://matheussgomes.github.io/barbearia-front-end/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+const API = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:5500/";
 
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
