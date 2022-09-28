@@ -28,6 +28,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
   <script src="./assets/js/popup.js" defer></script>
   <script src="./assets/js/HandleCookies.js" type="module" defer></script>
+  <script src="./assets/js/menu.js" defer></script>
   
   <!-- ALPINE JS -->
   <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
@@ -61,11 +62,37 @@
             </li>
           </ul>
         </div>
+        
         <div class="btn-box">
           <a class="btn" href="#schedule">Agendar</a>
         </div>
+
+        <div class="nav-menu-mobile">
+          <img src="./assets/icons/menu.svg" width="30px">
+        </div>
       </div>
     </div>
+  </nav>
+
+  <nav class="menu-mobile">
+    <div class="menu-mobile-overlay"></div>
+    <ul class="menu-mobile-list">
+      <li class="menu-mobile-item">
+        <a class="menu-mobile-item-link" href="#home">Home</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a class="menu-mobile-item-link" href="#about">Sobre</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a class="menu-mobile-item-link" href="#services">Serviços</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a class="menu-mobile-item-link" href="#gallery">Galeria</a>
+      </li>
+      <li class="menu-mobile-item">
+        <a class="menu-mobile-item-link" href="https://matheussgomes.github.io/barbearia-front-end/login.html">Login</a>
+      </li>
+    </ul>
   </nav>
 
   <section class="hero">
