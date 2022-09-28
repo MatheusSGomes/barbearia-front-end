@@ -75,6 +75,13 @@ btnConfirmar.addEventListener('click', (e) => {
     .catch(function (error) {
       iconError.style.display = 'block';
       popupForm.style.display = 'none';
+
+      btnConfirmar.textContent = 'CONFIRMAR';
+      btnConfirmar.removeChild(imgElement); 
+
       console.log(error);
+    }).finally(() => {
+      setTimeout(() => closePopup(), 7000);
     });
 })
+
