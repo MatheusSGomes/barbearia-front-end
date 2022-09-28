@@ -1,12 +1,17 @@
 import Cookie from './HandleCookies.js';
 
 // const URL = "https://matheussgomes.github.io/barbearia-front-end/";
-// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-const API = "http://127.0.0.1:8000/api/";
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const API = "http://127.0.0.1:8000/api/";
 const URL = "http://127.0.0.1:5500/";
 
 // axios.defaults.headers.post['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 // axios.defaults.headers.common.Accept += 'Access-Control-Allow-Origin: *'
+
+const btnLogin = document.querySelector('.btn-login');
+const loadingElement = document.createElement('img');
+loadingElement.setAttribute('src', './assets/icons/loading.svg');
+loadingElement.setAttribute('width', '30px');
 
 window.onload = (event) => {
   if (Cookie.getCookie('token')) {
@@ -25,6 +30,9 @@ const config = {
 const formLogin = document.querySelector('#form-login');
 formLogin.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  btnLogin.innerHTML = '';
+  btnLogin.appendChild(loadingElement);
 
   const email = event.explicitOriginalTarget.elements.namedItem('email').value;
   const password = event.explicitOriginalTarget.elements.namedItem('password').value;
@@ -46,6 +54,10 @@ function login(email, password) {
     .catch(function (error) {
       errorMessages.innerHTML = 'E-mail ou senha inválidos';
       errorMessages.style.display = 'block';
+
+      btnLogin.removeChild(loadingElement);
+      btnLogin.innerHTML = 'LOGIN';
+
       console.log(error.message);
     });
 }
