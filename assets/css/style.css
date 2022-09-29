@@ -48,3 +48,22 @@ p, a, button {
 }
 
 
+.btn-sm {
+  color: #fff;
+  text-decoration: none;
+  padding: .2rem .7rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-blue {
+  background-color: #12348D;
+}
+
+.btn-red {
+  background-color: #BD2B48;
+
+}
