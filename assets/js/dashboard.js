@@ -1,9 +1,9 @@
 import Cookie from './HandleCookies.js';
 
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-const URL = "https://matheussgomes.github.io/barbearia-front-end/";
-// const API = "http://127.0.0.1:8000/api/";
-// const URL = "http://127.0.0.1:5500/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const URL = "https://matheussgomes.github.io/barbearia-front-end/";
+const API = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:5500/";
 
 const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');
@@ -37,6 +37,10 @@ axios
             <td>${user.barba == 1 ? 'Sim' : 'Não'}</td>
             <td>${user.sobrancelhas == 1 ? 'Sim' : 'Não'}</td>
             <td>${user.hidratacao == 1 ? 'Sim' : 'Não'}</td>
+            <td>
+              <button class="btn-sm btn-blue btn-editar" data-id="${user.id}">Editar</button>
+              <button class="btn-sm btn-red btn-apagar" data-id="${user.id}">Apagar</button>
+            </td>
           </tr>
         `;
       });
@@ -45,7 +49,34 @@ axios
   })
   .catch(function (error) {
     console.log(error.message);
-  });
+  })
+  .finally(function () {
+    const buttonsApagar = document.querySelectorAll('.btn-apagar');
+    const buttonsEditar = document.querySelectorAll('.btn-editar');
+
+    buttonsApagar.forEach((button) => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        apagarAgendamento(event.target.dataset.id);
+      })
+    })
+
+    console.log(buttonsEditar);
+    
+  });;
+
+function apagarAgendamento(id) {
+  // DESTROY
+  axios
+    .delete(API+`agenda/${id}`)
+    .then(function (response) {
+      location.reload();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
 
 formNewUser.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -75,6 +106,9 @@ formNewUser.addEventListener('submit', function(event) {
       formNewUser.reset();
     });
 })
+
+
+
 
 // STORE
 // axios
