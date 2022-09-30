@@ -1,5 +1,5 @@
-// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-const API = "http://127.0.0.1:8000/api/";
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const API = "http://127.0.0.1:8000/api/";
 
 const popup = document.querySelector('.popup');
 const btnAgendar = document.querySelector('.btn-agendar');

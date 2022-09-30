@@ -1,5 +1,5 @@
-// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-const API = "http://127.0.0.1:8000/api/";
+const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const API = "http://127.0.0.1:8000/api/";
 
 const popup = document.querySelector('.popup');
 const btnConfirmar = document.querySelector('.btn-popup-services');
@@ -12,11 +12,10 @@ const nameInput = document.querySelector('#nameClient');
 const emailInput = document.querySelector('#emailClient');
 const whatsappInput = document.querySelector('#whatsappClient');
 
-// nameInput.value = 'João';
-// emailInput.value = 'joao@email.com';
-// whatsappInput.value = '91 9878 4598';
-
-// console.log(nameInput, emailInput, whatsappInput);
+const corteInput = document.getElementsByName('corte')[0];
+const sobrancelhasInput = document.getElementsByName('sobrancelhas')[0];
+const barbaInput = document.getElementsByName('barba')[0];
+const hidratacaoInput = document.getElementsByName('hidratacao')[0];
 
 export function openPopup(event) {
   popup.style.display = 'flex';
@@ -32,8 +31,14 @@ export function openPopup(event) {
       nameInput.value = response.data.nome;
       emailInput.value = response.data.email;
       whatsappInput.value = response.data.whatsapp;
+
+      corteInput.checked = response.data.corte == 1 ? true : false;
+      sobrancelhasInput.checked = response.data.sobrancelhas == 1 ? true : false;
+      barbaInput.checked = response.data.barba == 1 ? true : false;
+      hidratacaoInput.checked = response.data.hidratacao == 1 ? true : false;
+
       // horario.value = response.data.horario;
-      // console.log(response.data);
+      console.log(response.data);
     })
     .catch(function (error) {
       console.log(error);
