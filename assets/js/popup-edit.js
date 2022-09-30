@@ -8,11 +8,36 @@ const iconSuccessful = document.querySelector('.popup-successful');
 const iconError = document.querySelector('.popup-error');
 const btnClose = document.querySelector('.icon-close');
 
-export function openPopup() {
+const nameInput = document.querySelector('#nameClient');
+const emailInput = document.querySelector('#emailClient');
+const whatsappInput = document.querySelector('#whatsappClient');
+
+// nameInput.value = 'João';
+// emailInput.value = 'joao@email.com';
+// whatsappInput.value = '91 9878 4598';
+
+// console.log(nameInput, emailInput, whatsappInput);
+
+export function openPopup(event) {
   popup.style.display = 'flex';
   iconSuccessful.style.display = 'none';
   iconError.style.display = 'none';
   popupForm.style.display = 'block';
+
+  const id = event.target.dataset.id;
+  // SHOW
+  axios
+    .get(API+`agenda/${id}`)
+    .then(function (response) {
+      nameInput.value = response.data.nome;
+      emailInput.value = response.data.email;
+      whatsappInput.value = response.data.whatsapp;
+      // horario.value = response.data.horario;
+      // console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
 
 export function closePopup() {
@@ -74,6 +99,15 @@ btnClose.addEventListener('click', () => {
   closePopup();
 });
 
+// SHOW
+// axios
+//   .get(url+`agenda/${id}`)
+//   .then(function (response) {
+//     console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   })
 
 // UPDATE
 // axios

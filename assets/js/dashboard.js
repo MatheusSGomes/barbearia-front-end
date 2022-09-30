@@ -46,7 +46,7 @@ axios
         `;
       });
     }
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     console.log(error.message);
@@ -64,12 +64,10 @@ axios
 
     buttonsEditar.forEach((button) => {
       button.addEventListener('click', (event) => {
-        console.log(event.target.dataset.id);
-        openPopup();
+        // console.log(event.target.dataset.id);
+        openPopup(event);
       });
     });
-
-    
   });;
 
 function apagarAgendamento(id) {
