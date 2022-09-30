@@ -1,10 +1,10 @@
 import Cookie from './HandleCookies.js';
 import { openPopup, closePopup } from './popup-edit.js';
 
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-const URL = "https://matheussgomes.github.io/barbearia-front-end/";
-// const API = "http://127.0.0.1:8000/api/";
-// const URL = "http://127.0.0.1:5500/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+// const URL = "https://matheussgomes.github.io/barbearia-front-end/";
+const API = "http://127.0.0.1:8000/api/";
+const URL = "http://127.0.0.1:5500/";
 
 const tbody = document.querySelector('.schedule-table-tbody');
 const logoutBtn = document.querySelector('#logout');

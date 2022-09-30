@@ -1,5 +1,5 @@
-const API = "https://projeto-barbearia-api.herokuapp.com/api/";
-// const API = "http://127.0.0.1:8000/api/";
+// const API = "https://projeto-barbearia-api.herokuapp.com/api/";
+const API = "http://127.0.0.1:8000/api/";
 
 const popup = document.querySelector('.popup');
 const btnConfirmar = document.querySelector('.btn-popup-services');
@@ -17,13 +17,15 @@ const sobrancelhasInput = document.getElementsByName('sobrancelhas')[0];
 const barbaInput = document.getElementsByName('barba')[0];
 const hidratacaoInput = document.getElementsByName('hidratacao')[0];
 
+let id;
+
 export function openPopup(event) {
   popup.style.display = 'flex';
   iconSuccessful.style.display = 'none';
   iconError.style.display = 'none';
   popupForm.style.display = 'block';
 
-  const id = event.target.dataset.id;
+  id = event.target.dataset.id;
   // SHOW
   axios
     .get(API+`agenda/${id}`)
@@ -60,31 +62,33 @@ btnConfirmar.addEventListener('click', (e) => {
   btnConfirmar.textContent = '';
   btnConfirmar.appendChild(imgElement); 
   
-  const inputNome = document.getElementsByName('nome')[0].value;
-  const inputEmail = document.getElementsByName('email')[0].value;
-  const inputWhatsapp = document.getElementsByName('whatsapp')[0].value;
+  const inputNome = document.getElementsByName('nomeCliente')[0].value;
+  const inputEmail = document.getElementsByName('emailCliente')[0].value;
+  const inputWhatsapp = document.getElementsByName('whatsappCliente')[0].value;
 
   const inputCorte = document.getElementsByName('corte')[0].checked;
   const inputSobrancelhas = document.getElementsByName('sobrancelhas')[0].checked;
   const inputBarba = document.getElementsByName('barba')[0].checked;
   const inputHidratacao = document.getElementsByName('hidratacao')[0].checked;
 
+  // console.log(inputNome, inputEmail, inputWhatsapp, inputCorte);
+
+  // UPDATE
   axios
-    .post(`${API}agenda`, {
+    .put(API+`agenda/${id}`, {
       "nome": inputNome,
       "email": inputEmail,
       "whatsapp": inputWhatsapp,
-      "servicos": {
-          "corte": inputCorte === true ? 1 : 0,
-          "sobrancelhas": inputSobrancelhas === true ? 1 : 0,
-          "barba": inputBarba === true ? 1 : 0,
-          "hidratacao": inputHidratacao === true ? 1 : 0
-      },
-      // "horario": url.searchParams.get('horario')
+      "corte": inputCorte,
+      "sobrancelhas": inputSobrancelhas,
+      "barba": inputBarba,
+      "hidratacao": inputHidratacao,
+      "horario": "sex-16-17" 
     })
     .then(function (response) {
       iconSuccessful.style.display = 'block';
       popupForm.style.display = 'none';
+      location.reload();
       console.log(response);
     })
     .catch(function (error) {
