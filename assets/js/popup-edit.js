@@ -69,6 +69,7 @@ btnConfirmar.addEventListener('click', (e) => {
 
   btnConfirmar.textContent = '';
   btnConfirmar.appendChild(imgElement); 
+  btnConfirmar.setAttribute('disable', '');
   
   const inputNome = document.getElementsByName('nomeCliente')[0].value;
   const inputEmail = document.getElementsByName('emailCliente')[0].value;
@@ -79,37 +80,37 @@ btnConfirmar.addEventListener('click', (e) => {
   const inputBarba = document.getElementsByName('barba')[0].checked;
   const inputHidratacao = document.getElementsByName('hidratacao')[0].checked;
 
-  // console.log(inputNome, inputEmail, inputWhatsapp, inputCorte);
-
   // UPDATE
-  // axios
-  //   .put(API+`agenda/${id}`, {
-  //     "nome": inputNome,
-  //     "email": inputEmail,
-  //     "whatsapp": inputWhatsapp,
-  //     "corte": inputCorte,
-  //     "sobrancelhas": inputSobrancelhas,
-  //     "barba": inputBarba,
-  //     "hidratacao": inputHidratacao,
-  //     "horario": "sex-16-17" 
-  //   })
-  //   .then(function (response) {
-  //     iconSuccessful.style.display = 'block';
-  //     popupForm.style.display = 'none';
-  //     location.reload();
-  //     console.log(response);
-  //   })
-  //   .catch(function (error) {
-  //     iconError.style.display = 'block';
-  //     popupForm.style.display = 'none';
+  axios
+    .put(API+`agenda/${id}`, {
+      "nome": inputNome,
+      "email": inputEmail,
+      "whatsapp": inputWhatsapp,
+      "corte": inputCorte,
+      "sobrancelhas": inputSobrancelhas,
+      "barba": inputBarba,
+      "hidratacao": inputHidratacao,
+      "horario": "sex-16-17" 
+    })
+    .then(function (response) {
+      iconSuccessful.style.display = 'block';
+      popupForm.style.display = 'none';
+      
+      setTimeout(() => location.reload(), 1500);
 
-  //     btnConfirmar.textContent = 'CONFIRMAR';
-  //     btnConfirmar.removeChild(imgElement); 
+      console.log(response);
+    })
+    .catch(function (error) {
+      iconError.style.display = 'block';
+      popupForm.style.display = 'none';
 
-  //     console.log(error);
-  //   }).finally(() => {
-  //     setTimeout(() => closePopup(), 7000);
-  //   });
+      btnConfirmar.textContent = 'CONFIRMAR';
+      btnConfirmar.removeChild(imgElement); 
+
+      console.log(error);
+    }).finally(() => {
+      setTimeout(() => closePopup(), 7000);
+    });
 });
 
 btnClose.addEventListener('click', () => {

@@ -73,9 +73,10 @@ p, a, button {
 
 @keyframes skeleton-loading {
   0% {
-    background-color: rgba(209, 219, 224, .6);
+    background-color: rgba(209, 219, 224, .5);
   }
+  
   100% {
-    background-color: rgba(240, 243, 245, .6);
+    background-color: rgba(240, 243, 245, .7);
   }
-}
+} 
