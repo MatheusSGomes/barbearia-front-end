@@ -25,11 +25,19 @@ export function openPopup(event) {
   iconError.style.display = 'none';
   popupForm.style.display = 'block';
 
+  nameInput.classList.add('skeleton');
+  emailInput.classList.add('skeleton');
+  whatsappInput.classList.add('skeleton');
+
   id = event.target.dataset.id;
   // SHOW
   axios
     .get(API+`agenda/${id}`)
     .then(function (response) {
+      nameInput.classList.remove('skeleton');
+      emailInput.classList.remove('skeleton');
+      whatsappInput.classList.remove('skeleton');
+
       nameInput.value = response.data.nome;
       emailInput.value = response.data.email;
       whatsappInput.value = response.data.whatsapp;
@@ -74,34 +82,34 @@ btnConfirmar.addEventListener('click', (e) => {
   // console.log(inputNome, inputEmail, inputWhatsapp, inputCorte);
 
   // UPDATE
-  axios
-    .put(API+`agenda/${id}`, {
-      "nome": inputNome,
-      "email": inputEmail,
-      "whatsapp": inputWhatsapp,
-      "corte": inputCorte,
-      "sobrancelhas": inputSobrancelhas,
-      "barba": inputBarba,
-      "hidratacao": inputHidratacao,
-      "horario": "sex-16-17" 
-    })
-    .then(function (response) {
-      iconSuccessful.style.display = 'block';
-      popupForm.style.display = 'none';
-      location.reload();
-      console.log(response);
-    })
-    .catch(function (error) {
-      iconError.style.display = 'block';
-      popupForm.style.display = 'none';
+  // axios
+  //   .put(API+`agenda/${id}`, {
+  //     "nome": inputNome,
+  //     "email": inputEmail,
+  //     "whatsapp": inputWhatsapp,
+  //     "corte": inputCorte,
+  //     "sobrancelhas": inputSobrancelhas,
+  //     "barba": inputBarba,
+  //     "hidratacao": inputHidratacao,
+  //     "horario": "sex-16-17" 
+  //   })
+  //   .then(function (response) {
+  //     iconSuccessful.style.display = 'block';
+  //     popupForm.style.display = 'none';
+  //     location.reload();
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     iconError.style.display = 'block';
+  //     popupForm.style.display = 'none';
 
-      btnConfirmar.textContent = 'CONFIRMAR';
-      btnConfirmar.removeChild(imgElement); 
+  //     btnConfirmar.textContent = 'CONFIRMAR';
+  //     btnConfirmar.removeChild(imgElement); 
 
-      console.log(error);
-    }).finally(() => {
-      setTimeout(() => closePopup(), 7000);
-    });
+  //     console.log(error);
+  //   }).finally(() => {
+  //     setTimeout(() => closePopup(), 7000);
+  //   });
 });
 
 btnClose.addEventListener('click', () => {

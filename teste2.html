@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 2</title>
+    <style>
+      .skeleton {
+        animation: skeleton-loading 1s linear infinite alternate;
+      }
+
+      @keyframes skeleton-loading {
+        0% {
+          background-color: hsl(200, 20%, 80%);
+        }
+        100% {
+          background-color: hsl(200, 20%, 95%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="teste" id="teste" class="skeleton skeleton-text">
+</body>
+</html>
