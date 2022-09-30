@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/navbar.css">
   <link rel="stylesheet" href="./assets/css/dashboard.css">
+  <link rel="stylesheet" href="./assets/css/pop-up edit.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
 
   <!-- ALPINE JS -->
@@ -27,6 +28,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
   <script src="./assets/js/HandleCookies.js" type="module" defer></script>
   <script src="./assets/js/dashboard.js" type="module" defer></script>
+  <script src="./assets/js/popup-edit.js" type="module" defer></script>
 </head>
 <body>
   <nav class="navbar">
@@ -98,7 +100,7 @@
             </tr>
           </thead>
           <tbody class="schedule-table-tbody">
-            <tr>
+            <!-- <tr>
               <td>João</td>
               <td>Seg</td>
               <td>15-16</td>
@@ -110,17 +112,67 @@
                 <button class="btn-sm btn-blue btn-editar" data-id="1">Editar</button>
                 <button class="btn-sm btn-red btn-apagar" data-id="1">Apagar</button>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
+  <div class="popup">
+    <div class="popup-box">
+      <img class="icon-close" src="./assets/icons/close.svg" width="20px" />
+
+      <div class="popup-successful">
+        <img class="icon-successful" src="./assets/icons/success-popup.svg" width="120px" />
+        <p>Agendamento editado com sucesso</p>
+      </div>
+
+      <div class="popup-error">
+        <img class="icon-error" src="./assets/icons/error-popup.svg" width="120px" />
+        <p>Não foi possível editar o agendamento, tente novamente</p>
+      </div>
+
+      <form method="POST" class="popup-form" id="form-schedule">
+        <label for="name">Nome: </label>
+        <input class="input-popup" type="text" name="nome" id="name" autocomplete="off" />
+
+        <label for="name">Email: </label>
+        <input class="input-popup" type="email" name="email" id="email" autocomplete="off" />
+
+        <label for="name">Whatsapp: </label>
+        <input class="input-popup" type="text" name="whatsapp" id="whatsapp" autocomplete="off" x-mask="(99) 9.9999-9999" />
+
+        <div class="popup-services">
+          <div class="popup-services-option">
+            <input class="input-popup" type="checkbox" name="corte">
+            <label>Corte</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input class="input-popup" type="checkbox" name="sobrancelhas">
+            <label>Sobrancelhas</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input class="input-popup" type="checkbox" name="barba">
+            <label>Barba</label>
+          </div>
+          
+          <div class="popup-services-option">
+            <input class="input-popup" type="checkbox" name="hidratacao">
+            <label>Hidratação</label>
+          </div>
+        </div>
+
+        <button class="btn btn-popup-services" type="submit" onclick="openPopup();">Confirmar</button>
+      </form>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
-     
-  
+
       <div class="footer-logo">
         <img src="./assets/images/barber-logo.png" width="70px">
       </div>

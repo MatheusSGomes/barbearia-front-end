@@ -1,4 +1,5 @@
 import Cookie from './HandleCookies.js';
+import { openPopup, closePopup } from './popup-edit.js';
 
 // const API = "https://projeto-barbearia-api.herokuapp.com/api/";
 // const URL = "https://matheussgomes.github.io/barbearia-front-end/";
@@ -55,13 +56,19 @@ axios
     const buttonsEditar = document.querySelectorAll('.btn-editar');
 
     buttonsApagar.forEach((button) => {
-      button.addEventListener('click', function (event) {
+      button.addEventListener('click', (event) => {
         event.preventDefault();
         apagarAgendamento(event.target.dataset.id);
       })
     })
 
-    console.log(buttonsEditar);
+    buttonsEditar.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        console.log(event.target.dataset.id);
+        openPopup();
+      });
+    });
+
     
   });;
 
@@ -107,8 +114,11 @@ formNewUser.addEventListener('submit', function(event) {
     });
 })
 
-
-
+logoutBtn.addEventListener('click', function() {
+  Cookie
+    .setCookie('token', '');
+  document.location.reload();
+});
 
 // STORE
 // axios
@@ -171,9 +181,3 @@ formNewUser.addEventListener('submit', function(event) {
 //     console.log(error);
 //   });
 
-
-logoutBtn.addEventListener('click', function() {
-  Cookie
-    .setCookie('token', '');
-  document.location.reload();
-});

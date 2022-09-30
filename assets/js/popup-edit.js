@@ -2,38 +2,23 @@
 const API = "http://127.0.0.1:8000/api/";
 
 const popup = document.querySelector('.popup');
-const btnAgendar = document.querySelector('.btn-agendar');
 const btnConfirmar = document.querySelector('.btn-popup-services');
 const popupForm = document.querySelector('.popup-form');
 const iconSuccessful = document.querySelector('.popup-successful');
 const iconError = document.querySelector('.popup-error');
-const url = new URL(parent.location.href);
-const inputsCheckbox = document.querySelectorAll('input[type=radio]#schedule');
+const btnClose = document.querySelector('.icon-close');
 
-function openPopup() {
+export function openPopup() {
   popup.style.display = 'flex';
   iconSuccessful.style.display = 'none';
   iconError.style.display = 'none';
   popupForm.style.display = 'block';
 }
 
-function closePopup() {
-  const btnClose = document.querySelector('.icon-close');
+export function closePopup() {
   popup.style.display = 'none';
   popupForm.reset();
 }
-
-btnAgendar.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  inputsCheckbox.forEach(input => {
-    if (input.checked) {
-      url.searchParams.append('horario', input.dataset.horario);
-    }
-  })
-
-  openPopup();
-});
 
 btnConfirmar.addEventListener('click', (e) => {
   e.preventDefault();
@@ -65,7 +50,7 @@ btnConfirmar.addEventListener('click', (e) => {
           "barba": inputBarba === true ? 1 : 0,
           "hidratacao": inputHidratacao === true ? 1 : 0
       },
-      "horario": url.searchParams.get('horario')
+      // "horario": url.searchParams.get('horario')
     })
     .then(function (response) {
       iconSuccessful.style.display = 'block';
@@ -85,3 +70,26 @@ btnConfirmar.addEventListener('click', (e) => {
     });
 });
 
+btnClose.addEventListener('click', () => {
+  closePopup();
+});
+
+
+// UPDATE
+// axios
+//   .put(url+`agenda/${id}`, {
+//     "nome": "João Fernando",
+//     "email": "joao@email.com",
+//     "whatsapp": "61 7777-7895",
+//     "corte": true,
+//     "sobrancelhas": true,
+//     "barba": false,
+//     "hidratacao": false,
+//     "horario": "seg-16-17"  
+//   })
+//   .then(function (response) {
+//     console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
